@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <HeaderNav />
         <div className='flex'>
           <SideNav />
-          <div className='w-full px-4 pt-12'>
+          <div className='w-full px-4 pt-6 mb-12'>
             {children}
           </div>
         </div>
