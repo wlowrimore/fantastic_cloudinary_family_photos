@@ -42,7 +42,7 @@ const ClientImage = ({ publicId, result, path, onHeart, unheartedResource }) => 
           <Heart />
         </span>
       )}
-      <ImageMenu />
+      <ImageMenu result={result} />
     </div>
   )
 }
