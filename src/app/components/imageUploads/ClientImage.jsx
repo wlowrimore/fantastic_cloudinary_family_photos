@@ -5,8 +5,9 @@ import Heart from '../icons/Heart';
 import FullHeart from '../icons/FullHeart';
 import { useState, useTransition } from 'react';
 import { setAsFavoriteAction } from '@/app/gallery/actions';
+import ImageMenu from '@/components/ImageMenu';
 
-const ClientImage = ({ publicId, result, path }) => {
+const ClientImage = ({ publicId, result, path, onHeart, unheartedResource }) => {
   const [transition, startTransition] = useTransition();
   const [isFavorited, setIsFavorited] = useState(
     result.tags.includes('favorite')
@@ -23,11 +24,12 @@ const ClientImage = ({ publicId, result, path }) => {
       />
       {isFavorited ? (
         <span onClick={() => {
+          onHeart?.(resource);
           setIsFavorited(false);
           startTransition(() => {
             setAsFavoriteAction(publicId, false, path)
           })
-        }} className='absolute top-2 right-2 text-red-500 hover:text-white cursor-pointer'>
+        }} className='absolute top-2 left-2 text-red-500 hover:text-white cursor-pointer'>
           <FullHeart />
         </span>
       ) : (
@@ -36,10 +38,11 @@ const ClientImage = ({ publicId, result, path }) => {
           startTransition(() => {
             setAsFavoriteAction(publicId, true, path)
           })
-        }} className='absolute top-2 right-2 hover:text-red-500 cursor-pointer'>
+        }} className='absolute top-2 left-2 hover:text-red-500 cursor-pointer'>
           <Heart />
         </span>
       )}
+      <ImageMenu />
     </div>
   )
 }

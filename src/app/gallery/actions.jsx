@@ -4,7 +4,6 @@ import cloudinary from 'cloudinary';
 import { revalidatePath } from 'next/cache';
 
 export async function setAsFavoriteAction(publicId, isFavorite) {
-  // let isFavorite = true;
   let path = '';
 
   if (isFavorite) {
@@ -12,6 +11,6 @@ export async function setAsFavoriteAction(publicId, isFavorite) {
   } else {
     await cloudinary.v2.uploader.remove_tag("favorite", [publicId]);
   }
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   revalidatePath(path);
 }
