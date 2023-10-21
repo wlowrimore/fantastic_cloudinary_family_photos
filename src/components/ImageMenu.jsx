@@ -1,4 +1,4 @@
-import { FolderPlus } from "lucide-react"
+import { FolderPlus, Pencil } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -9,6 +9,7 @@ import {
 import Menu from "@/app/components/icons/Menu"
 import AddToAlbumDialog from "./AddToAlbumDialog"
 import { useState } from "react"
+import Link from "next/link"
 
 const ImageMenu = ({ result }) => {
   const [open, setOpen] = useState(false);
@@ -25,6 +26,10 @@ const ImageMenu = ({ result }) => {
         <DropdownMenuContent className="w-fit">
           <DropdownMenuItem asChild>
             <AddToAlbumDialog result={result} onClose={() => setOpen(false)} />
+          </DropdownMenuItem>
+
+          <DropdownMenuItem asChild>
+            <Link href={`/edit?publicId=${encodeURIComponent(result.public_id)}`} className='ml-2'><Pencil className='mr-2 w-4 h-4 cursor-pointer' />Edit</Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
