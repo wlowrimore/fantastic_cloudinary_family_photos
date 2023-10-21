@@ -15,12 +15,20 @@ import { useState } from "react"
 import { addImageToAlbum } from "./actions"
 
 
-const AddToAlbumDialog = ({ result }) => {
+const AddToAlbumDialog = ({ result, onClose }) => {
   const [albumName, setAlbumName] = useState('');
   const [open, setOpen] = useState(false);
-
+  // const onClose = () => { setOpen(false) };
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog
+      open={open}
+      onOpenChange={(newOpenState) => {
+        setOpen(newOpenState);
+        if (!newOpenState) {
+          onClose();
+        }
+      }}
+    >
       <DialogTrigger asChild>
         <Button variant="secondary">
           <FolderPlus className="mr-2 h-4 w-4" />
@@ -49,7 +57,7 @@ const AddToAlbumDialog = ({ result }) => {
         </div>
         <DialogFooter>
           <Button onClick={async () => {
-            console.log(result);
+            onClose();
             setOpen(false);
             await addImageToAlbum(result, albumName);
           }}
