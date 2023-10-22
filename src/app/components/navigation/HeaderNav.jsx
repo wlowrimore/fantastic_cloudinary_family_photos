@@ -6,14 +6,18 @@ import {
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/server"
 
+import Logo from '/public/logo.png';
 const Nav = () => {
   const { isAuthenticated, getUser } = getKindeServerSession()
   const user = getUser()
 
   return (
-    <nav className="border-b py-8">
+    <nav className="py-8 container">
       <div className="container mx-auto flex h-16 items-center px-4">
-        REWTZ APP
+        <div className='flex gap-4'>
+          <Image src={Logo} width={100} height={100} alt='site logo' className='opacity-80' />
+          <h1 className='text-2xl'>Photo App</h1>
+        </div>
         <div className="ml-auto flex items-center space-x-4">
           {!isAuthenticated() ? (
             <>

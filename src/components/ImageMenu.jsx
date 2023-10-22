@@ -29,7 +29,7 @@ const ImageMenu = ({ result }) => {
           </DropdownMenuItem>
 
           <DropdownMenuItem asChild>
-            <Link href={`/edit?publicId=${encodeURIComponent(result.public_id)}`} className='ml-2'><Pencil className='mr-2 w-4 h-4 cursor-pointer' />Edit</Link>
+            <Link href={`/edit?publicId=${encodeURIComponent(result.public_id)}`} className='ml-2 cursor-pointer'><Pencil className='mr-2 w-4 h-4' />Edit</Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

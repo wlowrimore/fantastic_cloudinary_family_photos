@@ -9,7 +9,6 @@ import AlbumCard from './AlbumCard';
 const AlbumsPage = async () => {
   const { folders } = await cloudinary.v2.api.root_folders()
 
-  console.log(folders)
   return (
     <section className='flex flex-col'>
       <div className='flex w-full justify-between mb-8'>

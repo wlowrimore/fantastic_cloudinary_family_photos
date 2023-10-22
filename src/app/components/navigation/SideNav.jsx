@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button"
+import cloudinary from 'cloudinary';
 import Heart from "../icons/Heart"
 import Link from "next/link"
 
-const SideNav = () => {
+const SideNav = async () => {
+  const { folders } = await cloudinary.v2.api.root_folders()
+
   return (
     <div className='pb-12 w-1/5'>
       <div className="w-full space-y-4 py-4">
@@ -27,6 +30,13 @@ const SideNav = () => {
                 Albums
               </Link>
             </Button>
+            {folders.map((folder) => (
+              <div className='flex flex-col ml-8 '>
+                <Link key={folder.path} href={`/albums/${folder.path}`} className='text-sm px-4 py-2 text-teal-300 hover:bg-neutral-700/50 rounded-md'>
+                  {folder.name}
+                </Link>
+              </div>
+            ))}
             <Button asChild variant="ghost" className="w-full justify-start flex gap-2">
               <Link href='/favorites'>
                 <Heart />
@@ -36,7 +46,7 @@ const SideNav = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

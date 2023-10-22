@@ -1,6 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { CldImage } from "next-cloudinary";
 import { useState } from "react";
 
@@ -8,6 +10,8 @@ const EditPage = ({ searchParams }) => {
   let { publicId } = searchParams;
 
   const [transformation, setTransformation] = useState();
+  const [pendingPrompt, setPendingPrompt] = useState('');
+  const [prompt, setPrompt] = useState('');
 
   return (
     <section className='flex flex-col'>
@@ -16,32 +20,48 @@ const EditPage = ({ searchParams }) => {
       </div>
 
       <div className='flex gap-4'>
-        <Button variant='destructive' onClick={() => setTransformation(undefined)}>Clear All</Button>
+        <div className="flex flex-col gap-4">
+          <Button
+            onClick={() => {
+              setTransformation("generative-fill");
+              setPrompt(pendingPrompt);
+            }}
+          >
+            Apply Generative Fill
+          </Button>
+          <Label>Prompt</Label>
+          <Input
+            value={pendingPrompt}
+            onChange={(e) => setPendingPrompt(e.currentTarget.value)}
+          />
+        </div>
+
         <Button onClick={() => setTransformation('blur')}>Apply Blur</Button>
         <Button onClick={() => setTransformation('zoom')}>Zoom & Pan</Button>
-        <Button onClick={() => setTransformation('generative-fill')}>Apply Generative Fill</Button>
         <Button onClick={() => setTransformation('pixelate')}>Pixelate</Button>
         <Button onClick={() => setTransformation('grayscale')}>Convert to Grayscale</Button>
         <Button onClick={() => setTransformation('tint')}>Tint</Button>
-        <Button onClick={() => setTransformation('rmv-bg')}>Remove Background</Button>
+        <Button variant='destructive' onClick={() => setTransformation(undefined)}>Clear Filter</Button>
       </div>
 
       <div className='grid grid-cols-2 mt-8'>
         <CldImage
           src={publicId}
           alt={publicId}
-          width='300'
-          height='200'
+          width='400'
+          height='300'
         />
 
         {transformation === 'generative-fill' && (
           <CldImage
             src={publicId}
             alt={publicId}
-            width='300'
-            height='200'
+            width='1400'
+            height='1200'
             crop="pad"
-            fillBackground
+            fillBackground={{
+              prompt
+            }}
           />
         )}
 
@@ -49,8 +69,8 @@ const EditPage = ({ searchParams }) => {
           <CldImage
             src={publicId}
             alt={publicId}
-            width='300'
-            height='200'
+            width='1800'
+            height='1200'
             blur="1200"
           />
         )}
@@ -59,8 +79,8 @@ const EditPage = ({ searchParams }) => {
           <CldImage
             src={publicId}
             alt={publicId}
-            width='300'
-            height='200'
+            width='1800'
+            height='1200'
             zoompan="loop"
           />
         )}
@@ -69,8 +89,8 @@ const EditPage = ({ searchParams }) => {
           <CldImage
             src={publicId}
             alt={publicId}
-            width='300'
-            height='200'
+            width='1800'
+            height='1200'
             pixelate
           />
         )}
@@ -79,8 +99,8 @@ const EditPage = ({ searchParams }) => {
           <CldImage
             src={publicId}
             alt={publicId}
-            width='300'
-            height='200'
+            width='1800'
+            height='1200'
             grayscale
           />
         )}
@@ -89,19 +109,9 @@ const EditPage = ({ searchParams }) => {
           <CldImage
             src={publicId}
             alt={publicId}
-            width='300'
-            height='200'
+            width='1800'
+            height='1200'
             tint="equalize:80:blue:blueviolet"
-          />
-        )}
-
-        {transformation === 'rmv-bg' && (
-          <CldImage
-            src={publicId}
-            alt={publicId}
-            width='300'
-            height='200'
-            removeBackground
           />
         )}
       </div>
