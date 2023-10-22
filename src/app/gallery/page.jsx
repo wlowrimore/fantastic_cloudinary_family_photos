@@ -15,7 +15,6 @@ const GalleryPage = async ({ searchParams, UploadResult }) => {
     .max_results(30)
     .execute();
 
-  console.log("results:", results)
   return (
     <section className='flex flex-col'>
       <ForceRefresh />

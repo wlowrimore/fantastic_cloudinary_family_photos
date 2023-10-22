@@ -30,7 +30,7 @@ const SearchForm = ({ initialSearch }) => {
           value={tagName}
           className="col-span-3 mt-1 mb-3 bg-neutral-700"
         />
-        <Button type="submit" className='h-[2.4rem] mb-2'>Search</Button>
+        <Button type="submit" className='h-[2.2rem] mb-2'>Search</Button>
       </div>
     </form>
   )

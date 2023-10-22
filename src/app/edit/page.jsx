@@ -31,6 +31,7 @@ const EditPage = ({ searchParams }) => {
           </Button>
           <Label>Prompt</Label>
           <Input
+            className='bg-neutral-500'
             value={pendingPrompt}
             onChange={(e) => setPendingPrompt(e.currentTarget.value)}
           />

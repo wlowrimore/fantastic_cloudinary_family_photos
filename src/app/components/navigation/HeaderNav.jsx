@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link";
 import {
   getKindeServerSession,
   RegisterLink,
@@ -15,7 +16,9 @@ const Nav = () => {
     <nav className="py-8 container">
       <div className="container mx-auto flex h-16 items-center px-4">
         <div className='flex gap-4'>
-          <Image src={Logo} width={100} height={100} alt='site logo' className='opacity-80' />
+          <Link href='/gallery'>
+            <Image src={Logo} width={100} height={100} alt='site logo' className='opacity-80' />
+          </Link>
           <h1 className='text-2xl'>Photo App</h1>
         </div>
         <div className="ml-auto flex items-center space-x-4">

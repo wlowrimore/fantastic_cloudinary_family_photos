@@ -7,7 +7,7 @@ const SideNav = async () => {
   const { folders } = await cloudinary.v2.api.root_folders()
 
   return (
-    <div className='pb-12 w-1/5'>
+    <div className='pb-12 w-1/5 px-2 border-r min-h-screen'>
       <div className="w-full space-y-4 py-4">
         <div className="pr-3 py-2">
           <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
