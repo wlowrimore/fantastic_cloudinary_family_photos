@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className='dark'>
       <body className={`${inter.className}`}>
         <HeaderNav />
-        <div className='flex container py-24 px-0'>
+        <div className='flex container pt-6 pb-12 px-0'>
           <SideNav />
           <div className='w-full px-4 pt-6 mb-12'>
             {children}
