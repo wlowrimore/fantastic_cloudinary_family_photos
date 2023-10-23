@@ -20,10 +20,9 @@ const GalleryPage = async ({ searchParams, UploadResult }) => {
       <div className='flex w-full justify-between mb-8'>
         <h1 className='text-4xl font-bold uppercase tracking-wide'>Gallery</h1>
         <UploadButton UploadResult={UploadResult} />
+
       </div>
-
       <SearchForm initialSearch={search} />
-
       <ImageGrid results={results} />
     </section>
   )

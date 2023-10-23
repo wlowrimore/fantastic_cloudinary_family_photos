@@ -57,11 +57,11 @@ const EditPage = ({ searchParams }) => {
           <CldImage
             src={publicId}
             alt={publicId}
-            width='1400'
-            height='1200'
+            width='1600'
+            height='1400'
             crop="pad"
             fillBackground={{
-              prompt
+              prompt,
             }}
           />
         )}
