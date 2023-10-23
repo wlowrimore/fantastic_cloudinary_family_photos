@@ -1,10 +1,5 @@
-// import UploadImage from "../components/imageUploads/UploadImage"
 import cloudinary from 'cloudinary';
 import AlbumCard from './AlbumCard';
-// import ClientImage from "../components/imageUploads/ClientImage";
-// import UploadButton from "../components/imageUploads/UploadButton";
-// import { ForceRefresh } from "../components/ForceRefresh";
-// import ImageGrid from "@/components/ImageGrid";
 
 const AlbumsPage = async () => {
   const { folders } = await cloudinary.v2.api.root_folders()

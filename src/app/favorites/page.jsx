@@ -1,5 +1,4 @@
 import cloudinary from 'cloudinary';
-import ClientImage from "../components/imageUploads/ClientImage";
 import { ForceRefresh } from '../components/ForceRefresh';
 import ImageGrid from '@/components/ImageGrid';
 

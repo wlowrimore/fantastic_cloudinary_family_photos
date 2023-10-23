@@ -16,7 +16,7 @@ const Nav = () => {
     <nav className="py-8 container">
       <div className="container mx-auto flex h-16 items-center px-4">
         <div className='flex gap-4'>
-          <Link href='/gallery'>
+          <Link href='/'>
             <Image src={Logo} width={100} height={100} alt='site logo' className='opacity-80' />
           </Link>
           <h1 className='text-2xl'>Photo App</h1>
@@ -24,8 +24,8 @@ const Nav = () => {
         <div className="ml-auto flex items-center space-x-4">
           {!isAuthenticated() ? (
             <>
-              <LoginLink className="bg-black text-white px-4 py-2 rounded">Sign in</LoginLink>
-              <RegisterLink className="bg-black text-white px-4 py-2 rounded">Sign up</RegisterLink>
+              <LoginLink className="bg-black text-white px-4 py-2 rounded">Login</LoginLink>
+              <RegisterLink className="bg-black text-white px-4 py-2 rounded">Signup</RegisterLink>
             </>
           ) : (
             <div className="flex gap-4 font-normal">

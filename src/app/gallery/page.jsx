@@ -1,6 +1,4 @@
-import UploadImage from "../components/imageUploads/UploadImage"
 import cloudinary from 'cloudinary';
-import ClientImage from "../components/imageUploads/ClientImage";
 import UploadButton from "../components/imageUploads/UploadButton";
 import { ForceRefresh } from "../components/ForceRefresh";
 import ImageGrid from "@/components/ImageGrid";
@@ -16,6 +14,7 @@ const GalleryPage = async ({ searchParams, UploadResult }) => {
     .execute();
 
   return (
+
     <section className='flex flex-col'>
       <ForceRefresh />
       <div className='flex w-full justify-between mb-8'>
