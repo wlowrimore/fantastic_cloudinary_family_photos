@@ -1,15 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Hero from '/public/hero_photo.svg'
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 
 export default function Home() {
-  const { isAuthenticated, getUser } = getKindeServerSession()
-  const user = getUser()
-
   return (
     <section className=''>
-      {!isAuthenticated() ? <p className='text-xl tracking-widest text-rose-300'>! You must be logged in to navigate this site</p> : <p className='text-xl tracking-widest text-cyan-400'>Hello {user.given_name}! <Link href='/gallery' className='text-rose-300 hover:underline'>Let's Get Started.</Link></p>}
       <div className='flex items-center justify-between gap-x-24'>
         <div className='flex-1 font-bold bg-gradient-to-b from-cyan-900 to-neutral-300 bg-clip-text text-transparent'>
           <h1 className='text-7xl uppercase'>Phun photos</h1>

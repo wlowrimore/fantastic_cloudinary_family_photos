@@ -2,6 +2,7 @@
 const nextConfig = {
   experimental: {
     serverActions: true,
+    serverComponentsExternalPackages: ['@prisma/client', 'bcrypt']
   },
   images: {
     domains: ['res.cloudinary.com', "platform-lookaside.fbsbx.com"],
