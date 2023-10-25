@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Phun Photos
 
-## Getting Started
+A Next.js 'fun project'.
 
-First, run the development server:
+### This app is a simple Next.js application utilizing Cloudinary. With no log in required, user can simply click the upload button, start uploading images from their local machine or some image sites provided by the Cloudinary platform. You can 'fovorite' images which will be rendered on the favorites page, accessible via the sidebar menu, and if you decide to 'unfavorite' an image, it will be removed from the favorites page.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### There is also an edit option (menu) on each image that when selected will navigate you to the edit page where you are allowed to use some built-in Artificial Intelligence filters on the selected image. These filters include: A prompt input field for adding content to the image, a blur feature, a zoom feature, a pixelate feature, a grayscale feature, and a tint feature. The image below demonstrates the addition of windows to the image of the upright bass and lamp.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img src='./public/ss-home.webp' alt='homepage' width='800' height='600' />
+<img src='./public/ss-gall.webp' alt='homepage' width='800' height='600' />
+<img src='./public/ss-ai.webp' alt='homepage' width='800' height='600' />
+<img src='./public/ss-upload.webp' alt='homepage' width='800' height='600' />
+<br /><br />
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[wlowrimore@gmail.com](mailto://wlowrimore@gmail.com)<br/>
+[www.linkedin.com](https://www.linkedin.com/in/william-lowrimore-dev)<br/>
+[www.williamlowrimore.com](https://www.williamlowrimore.com)
